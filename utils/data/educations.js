@@ -18,6 +18,6 @@ export const educations = [
     title: "High School Certificate",
     duration: "2017 - 2018",
     institution: "Govt. Exe. Boys H.S. School Chhapara, SEONI",
-    grade: "Grade : 89.4%",
+    grade: "Grade : 90%",
   }
 ]
