@@ -25,12 +25,10 @@ function HeroSection() {
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             Hello, <br />
-            I'm{" "}
+            I'm {' '}
             <span className=" text-red-500">{personalData.name}</span>
-            {`, a Software Engineer specializing in `}
-            <span className=" text-[#4d91fe]">
-              Full-Stack Development & Cloud Solutions
-            </span>
+            {` , a Web and & `}
+            <span className=" text-[#4d91fe]">{personalData.designation}</span>
             .
           </h1>
 
