@@ -16,7 +16,7 @@ function Navbar() {
       <div className="flex items-center justify-between py-5">
         <div className="flex flex-shrink-0 items-center">
           <Link href="/" className="text-[#16f2b3] text-3xl font-bold">
-            𝓢𝓸𝓾𝓻𝓪𝓫𝓱
+            |₷ő𝓊𝓻ā𝔟𝒽𒆜
           </Link>
         </div>
         <div className="md:hidden">
