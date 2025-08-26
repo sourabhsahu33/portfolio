@@ -4,8 +4,6 @@ export const skillsData = [
   'Javascript',
   'Java',
   'C++',
-  'Python',
-  'Matlab',
   'React',
   'Next JS',
   'Tailwind',
@@ -18,7 +16,7 @@ export const skillsData = [
   'Canva',
   'Ubuntu',
   'MaterialUI',
-  'Nginx',
+  'Azure',
   'kali'
 ]
 
