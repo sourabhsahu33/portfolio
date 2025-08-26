@@ -1,6 +1,6 @@
 export const personalData = {
   name: " Sourabh Sahu",
-  profile: '/profile.jpg',
+  profile: '/Sourabh.jpg',
   designation: "Software Developer with a keen interest in Cybersecurity.",
   description: "My name is Sourabh, a passionate programmer and quick learner with a self-driven attitude. Currently I am pursuing an Integrated M.Tech in Computer Science with a specialization in Cybersecurity. I specialize in Internet Web Programming and enjoy working on all aspects of web application development. I'm also a cyber security enthusiast, dedicated to building secure and user-friendly applications. I thrive on exploring new technologies and solving complex problems. Let's work together to make the web more open and secure.",
   email: 'sourabh.sahu10033@gmail.com',
