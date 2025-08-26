@@ -4,7 +4,7 @@ export const educations = [
     title: "Integrated M.Tech CSE Cyber-Security",
     duration: "2020 - 2025",
     institution: "Vellore Institute Of Technology University",
-    grade: "Grade : 9.01 CGPA",
+    grade: "Grade : 9.19 CGPA",
   },
   {
     id: 2,
