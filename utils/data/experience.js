@@ -1,9 +1,9 @@
 export const experiences = [
   {
     id: 1,
-    title: 'Integrated M.Tech CSE CyberSecurity',
-    company: "VIT Unversity",
-    duration: "(July 2020 - Ongoing)"
+    title: 'Enterprise Software Engineer I',
+    company: "Medtronic [MEIC]",
+    duration: "(Nov 24 - Present)"
   },
   {
     id: 2,
