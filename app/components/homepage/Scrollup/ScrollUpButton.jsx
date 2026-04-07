@@ -1,4 +1,3 @@
-// components/homepage/Scrollup/ScrollUpButton.jsx
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -7,39 +6,30 @@ import { FaArrowUp } from 'react-icons/fa';
 function ScrollUpButton() {
   const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+    const toggleVisibility = () => {
+      setIsVisible(window.pageYOffset > 400);
     };
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <>
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-white text-black p-3 rounded-full shadow-lg hover:bg-pink-600 focus:outline-none transition-all duration-300 sm:block hidden xs:block"
+          className="fixed bottom-6 right-6 z-50 w-10 h-10 bg-[#18181c] border border-[#222228] rounded-md text-[#c8cad8] text-[0.8rem] flex items-center justify-center cursor-pointer transition-all duration-200 hover:border-[#00e5a0] hover:text-[#00e5a0]"
+          aria-label="Scroll to top"
         >
           <FaArrowUp />
         </button>
       )}
-    </div>
+    </>
   );
 }
 

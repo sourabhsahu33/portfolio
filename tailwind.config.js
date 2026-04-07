@@ -8,26 +8,25 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['Montserrat', 'sans-serif'],
-        body: ['Raleway', 'sans-serif'],
+        mono: ["'JetBrains Mono'", 'monospace'],
+        sans: ["'Syne'", 'sans-serif'],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        'theme-bg': '#0c0c0e',
+        'theme-surface': '#111114',
+        'theme-surface2': '#18181c',
+        'theme-border': '#222228',
+        'theme-accent': '#00e5a0',
+        'theme-accent2': '#5b8fff',
+        'theme-muted': '#555566',
+        'theme-text': '#c8cad8',
+        'theme-bright': '#eeeef4',
       },
       container: {
         center: true,
         padding: {
-          DEFAULT: "1rem",
-          sm: "2rem",
-          lg: "3rem",
-          xl: "4rem",
-          "2xl": "4rem",
-          "3xl": "5rem",
+          DEFAULT: "2rem",
         },
-      },
-      screens: {
-        "4k": "1980px",
       },
     },
   },

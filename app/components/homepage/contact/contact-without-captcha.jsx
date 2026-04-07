@@ -32,7 +32,7 @@ function ContactWithoutCaptcha() {
       return;
     } else {
       setError({ ...error, required: false });
-    };
+    }
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -43,91 +43,77 @@ function ContactWithoutCaptcha() {
 
       if (res.status === 200) {
         toast.success('Message sent successfully!');
-        setInput({
-          name: '',
-          email: '',
-          message: '',
-        });
-      };
+        setInput({ name: '', email: '', message: '' });
+      }
     } catch (error) {
       toast.error(error?.text || error);
-    };
+    }
   };
 
   return (
-    <div className="">
-      <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-        Contact with me
-      </p>
-      <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
-        <p className="text-sm text-[#d3d8e8]">
-          {"Feel free to contact me with any questions or opportunities that match my skills."}
-        </p>
-        <div className="mt-6 flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <label className="text-base">Your Name: </label>
-            <input
-              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-              type="text"
-              maxLength="100"
-              required={true}
-              onChange={(e) => setInput({ ...input, name: e.target.value })}
-              onBlur={checkRequired}
-              value={input.name}
-            />
-          </div>
+    <div>
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-[0.65rem] tracking-[0.1em] uppercase text-[#555566]">your name</label>
+          <input
+            className="w-full bg-[#111114] border border-[#222228] rounded px-3.5 py-2.5 text-[#eeeef4] text-[0.78rem] outline-none transition-colors duration-200 focus:border-[#00e5a0] focus:shadow-[0_0_0_3px_rgba(0,229,160,0.06)] font-mono"
+            type="text"
+            maxLength="100"
+            placeholder="John Doe"
+            required={true}
+            onChange={(e) => setInput({ ...input, name: e.target.value })}
+            onBlur={checkRequired}
+            value={input.name}
+          />
+        </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-base">Your Email: </label>
-            <input
-              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-              type="email"
-              maxLength="100"
-              required={true}
-              value={input.email}
-              onChange={(e) => setInput({ ...input, email: e.target.value })}
-              onBlur={() => {
-                checkRequired();
-                setError({ ...error, email: !isValidEmail(input.email) });
-              }}
-            />
-            {error.email &&
-              <p className="text-sm text-red-400">Please provide a valid email!</p>
-            }
-          </div>
+        <div className="flex flex-col gap-1.5">
+          <label className="text-[0.65rem] tracking-[0.1em] uppercase text-[#555566]">your email</label>
+          <input
+            className="w-full bg-[#111114] border border-[#222228] rounded px-3.5 py-2.5 text-[#eeeef4] text-[0.78rem] outline-none transition-colors duration-200 focus:border-[#00e5a0] focus:shadow-[0_0_0_3px_rgba(0,229,160,0.06)] font-mono"
+            type="email"
+            maxLength="100"
+            placeholder="john@example.com"
+            required={true}
+            value={input.email}
+            onChange={(e) => setInput({ ...input, email: e.target.value })}
+            onBlur={() => {
+              checkRequired();
+              setError({ ...error, email: !isValidEmail(input.email) });
+            }}
+          />
+          {error.email && <p className="text-[0.68rem] text-[#ff6b6b] mt-1">Please provide a valid email!</p>}
+        </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-base">Your Message: </label>
-            <textarea
-              className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-              maxLength="500"
-              name="message"
-              required={true}
-              onChange={(e) => setInput({ ...input, message: e.target.value })}
-              onBlur={checkRequired}
-              rows="4"
-              value={input.message}
-            />
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            {error.required &&
-              <p className="text-sm text-red-400">
-                Email and Message are required!
-              </p>
-            }
-            <button
-              className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-              role="button"
-              onClick={handleSendMail}
-            >
-              <span>Send Message</span>
-              <TbMailForward className="mt-1" size={18} />
-            </button>
-          </div>
+        <div className="flex flex-col gap-1.5">
+          <label className="text-[0.65rem] tracking-[0.1em] uppercase text-[#555566]">message</label>
+          <textarea
+            className="w-full bg-[#111114] border border-[#222228] rounded px-3.5 py-2.5 text-[#eeeef4] text-[0.78rem] outline-none transition-colors duration-200 focus:border-[#00e5a0] focus:shadow-[0_0_0_3px_rgba(0,229,160,0.06)] resize-y font-mono"
+            maxLength="500"
+            name="message"
+            placeholder="Hey Sourabh, I wanted to..."
+            required={true}
+            onChange={(e) => setInput({ ...input, message: e.target.value })}
+            onBlur={checkRequired}
+            rows="5"
+            value={input.message}
+          />
+        </div>
+
+        <div className="flex flex-col items-start gap-2">
+          {error.required && <p className="text-[0.68rem] text-[#ff6b6b]">All fields are required!</p>}
+          <button
+            className="flex items-center gap-2 text-[0.72rem] tracking-[0.1em] uppercase bg-[#00e5a0] text-[#0c0c0e] border-none px-8 py-2.5 rounded cursor-pointer transition-all duration-200 hover:bg-[#00ffb3] hover:shadow-[0_0_20px_rgba(0,229,160,0.3)] font-mono"
+            role="button"
+            onClick={handleSendMail}
+          >
+            <span>send message</span>
+            <TbMailForward className="mt-0.5" size={16} />
+          </button>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default ContactWithoutCaptcha;

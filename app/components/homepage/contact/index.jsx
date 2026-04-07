@@ -1,89 +1,84 @@
 // @flow strict
 import { personalData } from '@/utils/data/personal-data';
 import Link from 'next/link';
+import { IoLogoGithub } from "react-icons/io";
 import { BiLogoLinkedin } from "react-icons/bi";
-import { CiLocationOn } from "react-icons/ci";
 import { FaMedium } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
-import { IoLogoGithub, IoMdCall } from "react-icons/io";
-import { MdAlternateEmail } from "react-icons/md";
 import ContactWithCaptcha from './contact-with-captcha';
 import ContactWithoutCaptcha from './contact-without-captcha';
 
 function ContactSection() {
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          📳CONTACT
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        {
-          (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY) ? <ContactWithCaptcha />
-            : <ContactWithoutCaptcha />
-        }
+    <section id="contact" className="my-16">
+      <div className="sec-divider"></div>
 
-        <div className="lg:w-3/4 ">
-          <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <MdAlternateEmail
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>{personalData.email}</span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <IoMdCall
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.phone}
-              </span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <CiLocationOn
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.address}
-              </span>
+      <div className="section-title">
+        <span className="num">06.</span>
+        <h2>Contact</h2>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Left - Info */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <p className="text-[0.65rem] tracking-[0.2em] uppercase text-[#00e5a0] mb-5">{'// let\'s talk'}</p>
+            <p className="text-[0.8rem] leading-[1.8] text-[#555566]">
+              I&apos;m open to full-time roles, freelance gigs, or just a chat about something interesting you&apos;re building. My inbox is always open.
             </p>
           </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
-              <IoLogoGithub
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
-              <BiLogoLinkedin
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.twitter}>
-              <FaXTwitter
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.medium}>
-              <FaMedium
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-             
+
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-4 text-[0.78rem] text-[#c8cad8] group">
+              <span className="w-[34px] h-[34px] border border-[#222228] rounded-md flex items-center justify-center text-[#00e5a0] text-[0.8rem] shrink-0 transition-all duration-200 group-hover:bg-[rgba(0,229,160,0.08)] group-hover:border-[#00e5a0]">
+                <i className="fas fa-envelope"></i>
+              </span>
+              <span>{personalData.email}</span>
+            </div>
+            <div className="flex items-center gap-4 text-[0.78rem] text-[#c8cad8] group">
+              <span className="w-[34px] h-[34px] border border-[#222228] rounded-md flex items-center justify-center text-[#00e5a0] text-[0.8rem] shrink-0 transition-all duration-200 group-hover:bg-[rgba(0,229,160,0.08)] group-hover:border-[#00e5a0]">
+                <i className="fas fa-phone"></i>
+              </span>
+              <span>{personalData.phone}</span>
+            </div>
+            <div className="flex items-center gap-4 text-[0.78rem] text-[#c8cad8] group">
+              <span className="w-[34px] h-[34px] border border-[#222228] rounded-md flex items-center justify-center text-[#00e5a0] text-[0.8rem] shrink-0 transition-all duration-200 group-hover:bg-[rgba(0,229,160,0.08)] group-hover:border-[#00e5a0]">
+                <i className="fas fa-location-dot"></i>
+              </span>
+              <span>{personalData.address}</span>
+            </div>
+          </div>
+
+          <div className="flex gap-2.5 mt-2">
+            {[
+              { href: personalData.github, icon: <IoLogoGithub size={18} /> },
+              { href: personalData.linkedIn, icon: <BiLogoLinkedin size={18} /> },
+              { href: personalData.twitter, icon: <FaXTwitter size={18} /> },
+              { href: personalData.medium, icon: <FaMedium size={18} /> },
+            ].map((social, i) => (
+              <Link
+                key={i}
+                target="_blank"
+                href={social.href}
+                className="w-[38px] h-[38px] border border-[#222228] rounded-md flex items-center justify-center text-[#555566] transition-all duration-200 hover:border-[#00e5a0] hover:text-[#00e5a0] hover:bg-[rgba(0,229,160,0.06)] hover:-translate-y-0.5"
+              >
+                {social.icon}
+              </Link>
+            ))}
           </div>
         </div>
+
+        {/* Right - Form */}
+        <div>
+          {
+            (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY)
+              ? <ContactWithCaptcha />
+              : <ContactWithoutCaptcha />
+          }
+        </div>
       </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default ContactSection;

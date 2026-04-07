@@ -1,25 +1,26 @@
 import { GoogleTagManager } from '@next/third-parties/google';
-import { Inter } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
-import './css/card.scss';
 import './css/globals.scss';
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Sourabh Sahu - Software Developer',
-  description: 'This is the portfolio of Sourabh Sahu. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.',
+  title: 'Sourabh Sahu — Software Engineer',
+  description: 'Portfolio of Sourabh Sahu. Full stack developer, cybersecurity enthusiast.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+      </head>
+      <body className="font-mono">
         <ToastContainer />
-        <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
-          <Navbar />
+        <Navbar />
+        <main className="min-h-screen relative mx-auto px-8 max-w-[1100px]" style={{ zIndex: 1 }}>
           {children}
         </main>
         <Footer />
